@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Portfolio Modern Futuristic 2026 - Frontend Developer & UI Designer">
+    <meta name="keywords"
+        content="portfolio, frontend developer, ui designer, futuristic website, magic ui, glassmorphism">
+    <meta name="author" content="Tino">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Tino | Futuristic Portfolio 2026">
+    <meta property="og:description" content="Premium developer portfolio with modern Magic UI effects.">
+    <meta property="og:image" content="./assets/img/Tino.jpeg">
+    <meta property="og:url" content="https://tino.github.io/portfolio">
+
+    <title>Tino | Futuristic Portfolio 2026</title>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@400;600;700&family=Space+Grotesk:wght@300;500;700&display=swap"
+        rel="stylesheet">
+
+    <!-- Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+    <!-- Loading Screen -->
+    <div id="loader" class="loader-wrapper">
+        <div class="loader-content">
+            <div class="loader-circle"></div>
+            <span class="loader-text">INITIALIZING SYSTEMS...</span>
+        </div>
+    </div>
+
+    <!-- Custom Cursor -->
+    <div class="cursor-glow" id="cursor-glow"></div>
+    <div class="cursor-dot" id="cursor-dot"></div>
+
+    <!-- Animated Background -->
+    <div class="bg-container">
+        <div class="blob blob-1"></div>
+        <div class="blob blob-2"></div>
+        <div class="blob blob-3"></div>
+        <div class="stars-overlay"></div>
+    </div>
+
+    <!-- Navbar -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="#home" class="nav-logo">TINO<span>.</span></a>
+
+            <ul class="nav-menu" id="nav-menu">
+                <li><a href="#home" class="nav-link active">Home</a></li>
+                <li><a href="#about" class="nav-link">About</a></li>
+                <li><a href="#skills" class="nav-link">Skills</a></li>
+                <li><a href="#experience" class="nav-link">Experience</a></li>
+                <li><a href="#projects" class="nav-link">Projects</a></li>
+                <li><a href="#testimonials" class="nav-link">Testimonials</a></li>
+                <li><a href="#certificates" class="nav-link">Certificates</a></li>
+                <li><a href="#contact" class="nav-link">Contact</a></li>
+            </ul>
+
+            <div class="nav-toggle" id="nav-toggle">
+                <i data-lucide="menu"></i>
+            </div>
+        </div>
+        <div class="scroll-progress" id="scroll-progress"></div>
+    </nav>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero section" id="home">
+            <div class="container hero-container">
+                <div class="hero-content" data-reveal="left">
+                    <div class="hero-badge">Available for Work</div>
+                    <h1 class="hero-title">
+                        Hi, I'm <span class="gradient-text">Tino</span><br>
+                        <span id="typing-text"></span>
+                    </h1>
+                    <p class="hero-description">
+                        Architecting digital experiences with a fusion of modern aesthetics and high-performance code.
+                        specialized in building futuristic interfaces that inspire.
+                    </p>
+                    <div class="hero-btns">
+                        <a href="#contact" class="btn btn-primary">Contact Me</a>
+                        <a href="#" class="btn btn-secondary">Download CV</a>
+                    </div>
+                </div>
+                <div class="hero-image" data-reveal="right">
+                    <div class="image-wrapper">
+                        <img src="./assets/img/Tino.jpeg" alt="Profile Picture">
+                        <div class="glow-ring"></div>
+                    </div>
+                </div>
+            </div>
+            <a href="#about" class="scroll-down">
+                <span>SCROLL</span>
+                <i data-lucide="chevron-down"></i>
+            </a>
+        </section>
+
+        <!-- About Section -->
+        <section class="about section" id="about">
+            <div class="container">
+                <div class="section-header" data-reveal="up">
+                    <h2 class="section-title">About Me</h2>
+                    <p class="section-subtitle">The journey behind the code</p>
+                </div>
+                <div class="about-grid">
+                    <div class="about-card glass" data-reveal="left">
+                        <div class="about-icon"><i data-lucide="user"></i></div>
+                        <h3>Who I Am</h3>
+                        <p>I am a passionate developer driven by the intersection of design and technology. My goal is
+                            to create seamless user experiences that feel like magic.</p>
+                    </div>
+                    <div class="about-card glass" data-reveal="up">
+                        <div class="about-icon"><i data-lucide="graduation-cap"></i></div>
+                        <h3>Education</h3>
+                        <p>Currently studying at SMK RAJASA, focusing on modern web technologies and software
+                            architecture.</p>
+                    </div>
+                    <div class="about-card glass" data-reveal="right">
+                        <div class="about-icon"><i data-lucide="rocket"></i></div>
+                        <h3>My Mission</h3>
+                        <p>To push the boundaries of the web with innovative designs, clean code, and futuristic
+                            aesthetics that define the next generation of digital products.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Skills Section -->
+        <section class="skills section" id="skills">
+            <div class="container">
+                <div class="section-header" data-reveal="up">
+                    <h2 class="section-title">Technical Skills</h2>
+                    <p class="section-subtitle">My professional stack</p>
+                </div>
+                <div class="skills-grid">
+                    <!-- HTML -->
+                    <div class="skill-card glass" data-reveal="up">
+                        <div class="skill-info">
+                            <i data-lucide="code-2"></i>
+                            <span>HTML5</span>
+                        </div>
+                        <div class="progress-bar">
+                            <div class="progress" style="width: 95%;"></div>
+                        </div>
+                    </div>
+                    <!-- CSS -->
+                    <div class="skill-card glass" data-reveal="up">
+                        <div class="skill-info">
+                            <i data-lucide="palette"></i>
+                            <span>CSS3 & Tailwind</span>
+                        </div>
+                        <div class="progress-bar">
+                            <div class="progress" style="width: 90%;"></div>
+                        </div>
+                    </div>
+                    <!-- JS -->
+                    <div class="skill-card glass" data-reveal="up">
+                        <div class="skill-info">
+                            <i data-lucide="file-json"></i>
+                            <span>JavaScript</span>
+                        </div>
+                        <div class="progress-bar">
+                            <div class="progress" style="width: 85%;"></div>
+                        </div>
+                    </div>
+                    <!-- PHP -->
+                    <div class="skill-card glass" data-reveal="up">
+                        <div class="skill-info">
+                            <i data-lucide="server"></i>
+                            <span>PHP & Laravel</span>
+                        </div>
+                        <div class="progress-bar">
+                            <div class="progress" style="width: 80%;"></div>
+                        </div>
+                    </div>
+                    <!-- Database -->
+                    <div class="skill-card glass" data-reveal="up">
+                        <div class="skill-info">
+                            <i data-lucide="database"></i>
+                            <span>MySQL</span>
+                        </div>
+                        <div class="progress-bar">
+                            <div class="progress" style="width: 75%;"></div>
+                        </div>
+                    </div>
+                    <!-- Tools -->
+                    <div class="skill-card glass" data-reveal="up">
+                        <div class="skill-info">
+                            <i data-lucide="github"></i>
+                            <span>GitHub & Git</span>
+                        </div>
+                        <div class="progress-bar">
+                            <div class="progress" style="width: 90%;"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Experience Section -->
+        <section class="experience section" id="experience">
+            <div class="container">
+                <div class="section-header" data-reveal="up">
+                    <h2 class="section-title">Experience</h2>
+                    <p class="section-subtitle">My professional journey</p>
+                </div>
+                <div class="timeline">
+                    <!-- Item 1 -->
+                    <div class="timeline-item" data-reveal="left">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-date">2025 - Present</div>
+                        <div class="timeline-content glass">
+                            <h3>Lead Frontend Architect</h3>
+                            <h4>CyberNetic Systems</h4>
+                            <p>Leading the development of next-generation web interfaces using advanced glassmorphism
+                                and real-time data visualization techniques.</p>
+                        </div>
+                    </div>
+                    <!-- Item 2 -->
+                    <div class="timeline-item" data-reveal="right">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-date">2024 - 2025</div>
+                        <div class="timeline-content glass">
+                            <h3>UI/UX Designer</h3>
+                            <h4>Nexus Digital Agency</h4>
+                            <p>Crafting immersive user experiences and futuristic design systems for high-profile
+                                fintech clients.</p>
+                        </div>
+                    </div>
+                    <!-- Item 3 -->
+                    <div class="timeline-item" data-reveal="left">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-date">2023 - 2024</div>
+                        <div class="timeline-content glass">
+                            <h3>Junior Web Developer</h3>
+                            <h4>Stellar Tech Solutions</h4>
+                            <p>Developed responsive web applications and contributed to the optimization of internal CMS
+                                systems.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section class="projects section" id="projects">
+            <div class="container">
+                <div class="section-header" data-reveal="up">
+                    <h2 class="section-title">Featured Projects</h2>
+                    <p class="section-subtitle">Selected works from 2024-2026</p>
+                </div>
+                <div class="projects-grid">
+                    <!-- Project 1 -->
+                    <div class="project-card glass" data-reveal="up">
+                        <div class="project-img">
+                            <img src="./assets/projects/project1.png" alt="E-commerce AI">
+                        </div>
+                        <div class="project-info">
+                            <h3>Nexus AI E-commerce</h3>
+                            <p>An intelligent shopping platform with personalized recommendations.</p>
+                            <div class="project-tags">
+                                <span>JavaScript</span>
+                                <span>Tailwind</span>
+                                <span>API</span>
+                            </div>
+                            <div class="project-links">
+                                <a href="#"><i data-lucide="external-link"></i> Demo</a>
+                                <a href="#"><i data-lucide="github"></i> Code</a>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Project 2 -->
+                    <div class="project-card glass" data-reveal="up">
+                        <div class="project-img">
+                            <img src="./assets/projects/project2.png" alt="Crypto Dashboard">
+                        </div>
+                        <div class="project-info">
+                            <h3>EtherFlow Dashboard</h3>
+                            <p>Real-time cryptocurrency tracking with advanced analytics.</p>
+                            <div class="project-tags">
+                                <span>Chart.js</span>
+                                <span>PHP</span>
+                                <span>MySQL</span>
+                            </div>
+                            <div class="project-links">
+                                <a href="#"><i data-lucide="external-link"></i> Demo</a>
+                                <a href="#"><i data-lucide="github"></i> Code</a>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Project 3 -->
+                    <div class="project-card glass" data-reveal="up">
+                        <div class="project-img">
+                            <img src="./assets/projects/project3.png" alt="Task Manager">
+                        </div>
+                        <div class="project-info">
+                            <h3>Nova Task Manager</h3>
+                            <p>Futuristic task management tool with holographic UI elements.</p>
+                            <div class="project-tags">
+                                <span>Vanilla JS</span>
+                                <span>CSS Grid</span>
+                            </div>
+                            <div class="project-links">
+                                <a href="#"><i data-lucide="external-link"></i> Demo</a>
+                                <a href="#"><i data-lucide="github"></i> Code</a>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Project 4 -->
+                    <div class="project-card glass" data-reveal="up">
+                        <div class="project-img">
+                            <img src="./assets/projects/project4.png" alt="SaaS Landing">
+                        </div>
+                        <div class="project-info">
+                            <h3>Aura SaaS Engine</h3>
+                            <p>High-performance landing page for AI-driven software solutions.</p>
+                            <div class="project-tags">
+                                <span>HTML5</span>
+                                <span>GSAP</span>
+                            </div>
+                            <div class="project-links">
+                                <a href="#"><i data-lucide="external-link"></i> Demo</a>
+                                <a href="#"><i data-lucide="github"></i> Code</a>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Project 5 (Placeholder) -->
+                    <div class="project-card glass" data-reveal="up">
+                        <div class="project-img">
+                            <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=600"
+                                alt="Social App">
+                        </div>
+                        <div class="project-info">
+                            <h3>Lumina Social</h3>
+                            <p>A minimalist social network focused on privacy and aesthetics.</p>
+                            <div class="project-tags">
+                                <span>Laravel</span>
+                                <span>Vue.js</span>
+                            </div>
+                            <div class="project-links">
+                                <a href="#"><i data-lucide="external-link"></i> Demo</a>
+                                <a href="#"><i data-lucide="github"></i> Code</a>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Project 6 (Placeholder) -->
+                    <div class="project-card glass" data-reveal="up">
+                        <div class="project-img">
+                            <img src="https://images.unsplash.com/photo-1558655146-d09347e92766?auto=format&fit=crop&q=80&w=600"
+                                alt="Portfolio">
+                        </div>
+                        <div class="project-info">
+                            <h3>Titan Portfolio</h3>
+                            <p>The very website you are browsing, built with futuristic tech.</p>
+                            <div class="project-tags">
+                                <span>Vanilla Tech</span>
+                                <span>Magic UI</span>
+                            </div>
+                            <div class="project-links">
+                                <a href="#"><i data-lucide="external-link"></i> Demo</a>
+                                <a href="#"><i data-lucide="github"></i> Code</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Certificates Section -->
+        <section class="certificates section" id="certificates">
+            <div class="container">
+                <div class="section-header" data-reveal="up">
+                    <h2 class="section-title">Certifications</h2>
+                    <p class="section-subtitle">Verified achievements</p>
+                </div>
+                <div class="cert-grid">
+                    <div class="cert-card glass" data-reveal="up">
+                        <img src="https://images.unsplash.com/photo-1589330694653-ded6df03f754?auto=format&fit=crop&q=80&w=600"
+                            alt="Certificate 1">
+                        <div class="cert-overlay">
+                            <i data-lucide="zoom-in"></i>
+                        </div>
+                    </div>
+                    <div class="cert-card glass" data-reveal="up">
+                        <img src="https://images.unsplash.com/photo-1606326666430-2c430462097c?auto=format&fit=crop&q=80&w=600"
+                            alt="Certificate 2">
+                        <div class="cert-overlay">
+                            <i data-lucide="zoom-in"></i>
+                        </div>
+                    </div>
+                    <div class="cert-card glass" data-reveal="up">
+                        <img src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&q=80&w=600"
+                            alt="Certificate 3">
+                        <div class="cert-overlay">
+                            <i data-lucide="zoom-in"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Testimonials Section -->
+        <section class="testimonials section" id="testimonials">
+            <div class="container">
+                <div class="section-header" data-reveal="up">
+                    <h2 class="section-title">Client Feedback</h2>
+                    <p class="section-subtitle">What others say about my work</p>
+                </div>
+                <div class="testimonials-grid">
+                    <!-- Testimonial 1 -->
+                    <div class="testimonial-card glass" data-reveal="up">
+                        <div class="testimonial-content">
+                            <i data-lucide="quote" class="quote-icon"></i>
+                            <p>"Tino's ability to transform complex ideas into stunning, high-performance interfaces is
+                                truly remarkable. A visionary developer."</p>
+                        </div>
+                        <div class="testimonial-author">
+                            <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&q=80&w=100"
+                                alt="Alex Rivers">
+                            <div>
+                                <h4>Alex Rivers</h4>
+                                <span>CEO, CyberNetic</span>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Testimonial 2 -->
+                    <div class="testimonial-card glass" data-reveal="up">
+                        <div class="testimonial-content">
+                            <i data-lucide="quote" class="quote-icon"></i>
+                            <p>"The futuristic design and attention to detail in our latest project exceeded all
+                                expectations. Tino is a master of his craft."</p>
+                        </div>
+                        <div class="testimonial-author">
+                            <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?auto=format&fit=crop&q=80&w=100"
+                                alt="Sarah Chen">
+                            <div>
+                                <h4>Sarah Chen</h4>
+                                <span>Product Manager, Nexus</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section class="contact section" id="contact">
+            <div class="container">
+                <div class="section-header" data-reveal="up">
+                    <h2 class="section-title">Get In Touch</h2>
+                    <p class="section-subtitle">Let's build something amazing together</p>
+                </div>
+                <div class="contact-wrapper">
+                    <div class="contact-info" data-reveal="left">
+                        <div class="info-item">
+                            <i data-lucide="mail"></i>
+                            <div>
+                                <h4>Email</h4>
+                                <p>hello@tino.dev</p>
+                            </div>
+                        </div>
+                        <div class="info-item">
+                            <i data-lucide="map-pin"></i>
+                            <div>
+                                <h4>Location</h4>
+                                <p>Surabaya, Indonesia</p>
+                            </div>
+                        </div>
+                        <div class="social-links">
+                            <a href="#" class="social-icon"><i data-lucide="github"></i></a>
+                            <a href="#" class="social-icon"><i data-lucide="linkedin"></i></a>
+                            <a href="#" class="social-icon"><i data-lucide="instagram"></i></a>
+                            <a href="#" class="social-icon"><i data-lucide="message-circle"></i></a>
+                        </div>
+                    </div>
+                    <form class="contact-form glass" data-reveal="right">
+                        <div class="input-group">
+                            <input type="text" placeholder="Your Name" required>
+                        </div>
+                        <div class="input-group">
+                            <input type="email" placeholder="Your Email" required>
+                        </div>
+                        <div class="input-group">
+                            <textarea placeholder="Your Message" rows="5" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary w-full">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">TINO<span>.</span></div>
+                <p class="footer-quote">"The only way to do great work is to love what you do."</p>
+                <div class="footer-line"></div>
+                <p class="copyright">&copy; 2026 Tino. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top -->
+    <button id="back-to-top" class="back-to-top">
+        <i data-lucide="arrow-up"></i>
+    </button>
+
+    <!-- Modal for Certificates -->
+    <div id="cert-modal" class="modal">
+        <span class="modal-close">&times;</span>
+        <img class="modal-content" id="modal-img">
+    </div>
+
+    <!-- Scripts -->
+    <script src="./script.js"></script>
+    <script>
+        // Initialize Lucide Icons
+        lucide.createIcons();
+    </script>
+</body>
+
+</html>
