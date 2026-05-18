@@ -41,7 +41,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // 3. Typing Animation
     const typingText = document.getElementById('typing-text');
-    const roles = ["Frontend Developer", "UI Designer", "Fullstack Developer", "Tech Visionary"];
+    const roles = ["Pengembang Frontend", "Desainer UI", "Pengembang Fullstack", "Visioner Teknologi"];
     let roleIndex = 0;
     let charIndex = 0;
     let isDeleting = false;
@@ -238,11 +238,11 @@ document.addEventListener('DOMContentLoaded', () => {
             const btn = contactForm.querySelector('button');
             const originalText = btn.textContent;
             
-            btn.textContent = 'SENDING...';
+            btn.textContent = 'MENGIRIM...';
             btn.disabled = true;
             
             setTimeout(() => {
-                alert('Message received! (Demo purpose)');
+                alert('Pesan diterima! (Tujuan Demo)');
                 btn.textContent = originalText;
                 btn.disabled = false;
                 contactForm.reset();
