@@ -238,15 +238,23 @@ document.addEventListener('DOMContentLoaded', () => {
             const btn = contactForm.querySelector('button');
             const originalText = btn.textContent;
             
+            const name = document.getElementById('wa-name').value;
+            const email = document.getElementById('wa-email').value;
+            const message = document.getElementById('wa-message').value;
+            
+            const text = `Halo Tino, saya ${name} (${email}).\n\n${message}`;
+            const whatsappNumber = '6285117675380';
+            const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(text)}`;
+
             btn.textContent = 'MENGIRIM...';
             btn.disabled = true;
             
             setTimeout(() => {
-                alert('Pesan diterima! (Tujuan Demo)');
+                window.open(whatsappUrl, '_blank');
                 btn.textContent = originalText;
                 btn.disabled = false;
                 contactForm.reset();
-            }, 1500);
+            }, 1000);
         });
     }
 });
