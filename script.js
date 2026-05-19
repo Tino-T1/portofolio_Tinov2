@@ -230,10 +230,14 @@ document.addEventListener('DOMContentLoaded', () => {
         window.scrollTo({ top: 0, behavior: 'smooth' });
     });
 
-    // 10. Form Submission
+    // 10. Form Submission via Supabase
+    const supabaseUrl = 'https://bzppctjnqyvptwjvywva.supabase.co';
+    const supabaseKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImJ6cHBjdGpucXl2cHR3anZ5d3ZhIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzkxNjY4MjgsImV4cCI6MjA5NDc0MjgyOH0.kZl-hlPXvAUYa5kjpEBRsyraNW2KM8SJLbvNB0JS6W4';
+    const supabase = window.supabase.createClient(supabaseUrl, supabaseKey);
+
     const contactForm = document.querySelector('.contact-form');
     if (contactForm) {
-        contactForm.addEventListener('submit', (e) => {
+        contactForm.addEventListener('submit', async (e) => {
             e.preventDefault();
             const btn = contactForm.querySelector('button');
             const originalText = btn.textContent;
@@ -242,19 +246,27 @@ document.addEventListener('DOMContentLoaded', () => {
             const email = document.getElementById('wa-email').value;
             const message = document.getElementById('wa-message').value;
             
-            const text = `Halo Tino, saya ${name} (${email}).\n\n${message}`;
-            const whatsappNumber = '6285117675380';
-            const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(text)}`;
-
             btn.textContent = 'MENGIRIM...';
             btn.disabled = true;
-            
-            setTimeout(() => {
-                window.open(whatsappUrl, '_blank');
+
+            try {
+                const { data, error } = await supabase
+                    .from('messages')
+                    .insert([
+                        { name: name, email: email, message: message }
+                    ]);
+
+                if (error) throw error;
+
+                alert('Pesan berhasil dikirim! Terima kasih telah menghubungi saya.');
+                contactForm.reset();
+            } catch (error) {
+                console.error('Error saving message:', error);
+                alert('Maaf, terjadi kesalahan saat mengirim pesan. Silakan coba lagi nanti.');
+            } finally {
                 btn.textContent = originalText;
                 btn.disabled = false;
-                contactForm.reset();
-            }, 1000);
+            }
         });
     }
 });
