@@ -79,12 +79,12 @@
         <section class="hero section" id="home">
             <div class="container hero-container">
                 <div class="hero-content" data-reveal="left">
-                    <div class="hero-badge">Siap Bekerja</div>
+                    <div class="hero-badge" id="hero-badge">Siap Bekerja</div>
                     <h1 class="hero-title">
-                        Hai, Saya <span class="gradient-text">Tino</span><br>
+                        Hai, Saya <span class="gradient-text" id="hero-name">Tino</span><br>
                         <span id="typing-text"></span>
                     </h1>
-                    <p class="hero-description">
+                    <p class="hero-description" id="hero-description">
                         Membangun pengalaman digital dengan perpaduan estetika modern dan kode berkinerja tinggi.
                         spesialis dalam membangun antarmuka futuristik yang menginspirasi.
                     </p>
@@ -117,20 +117,20 @@
                     <div class="about-card glass" data-reveal="left">
                         <div class="about-icon"><i data-lucide="user"></i></div>
                         <h3>Siapa Saya</h3>
-                        <p>Saya adalah pengembang yang bersemangat didorong oleh persimpangan desain dan teknologi.
+                        <p id="about-whoami">Saya adalah pengembang yang bersemangat didorong oleh persimpangan desain dan teknologi.
                             Tujuan saya adalah
                             menciptakan pengalaman pengguna yang mulus yang terasa seperti keajaiban.</p>
                     </div>
                     <div class="about-card glass" data-reveal="up">
                         <div class="about-icon"><i data-lucide="graduation-cap"></i></div>
                         <h3>Pendidikan</h3>
-                        <p>Saat ini belajar di SMK RAJASA, berfokus pada teknologi web modern dan arsitektur
+                        <p id="about-education">Saat ini belajar di SMK RAJASA, berfokus pada teknologi web modern dan arsitektur
                             perangkat lunak.</p>
                     </div>
                     <div class="about-card glass" data-reveal="right">
                         <div class="about-icon"><i data-lucide="rocket"></i></div>
                         <h3>Misi Saya</h3>
-                        <p>Untuk mendorong batas-batas web dengan desain inovatif, kode bersih, dan estetika
+                        <p id="about-mission">Untuk mendorong batas-batas web dengan desain inovatif, kode bersih, dan estetika
                             futuristik yang mendefinisikan generasi produk digital berikutnya.</p>
                     </div>
                 </div>
@@ -261,119 +261,8 @@
                     <h2 class="section-title">Proyek Unggulan</h2>
                     <p class="section-subtitle">Karya pilihan dari 2024-2026</p>
                 </div>
-                <div class="projects-grid">
-                    <!-- Project 1 -->
-                    <div class="project-card glass" data-reveal="up">
-                        <div class="project-img">
-                            <img src="./assets/projects/project1.png" alt="E-commerce AI">
-                        </div>
-                        <div class="project-info">
-                            <h3>Nexus AI E-commerce</h3>
-                            <p>Platform belanja cerdas dengan rekomendasi yang dipersonalisasi.</p>
-                            <div class="project-tags">
-                                <span>JavaScript</span>
-                                <span>Tailwind</span>
-                                <span>API</span>
-                            </div>
-                            <div class="project-links">
-                                <a href="#"><i data-lucide="external-link"></i> Demo</a>
-                                <a href="#"><i data-lucide="github"></i> Kode</a>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Project 2 -->
-                    <div class="project-card glass" data-reveal="up">
-                        <div class="project-img">
-                            <img src="./assets/projects/project2.png" alt="Crypto Dashboard">
-                        </div>
-                        <div class="project-info">
-                            <h3>EtherFlow Dashboard</h3>
-                            <p>Pelacakan mata uang kripto waktu nyata dengan analitik canggih.</p>
-                            <div class="project-tags">
-                                <span>Chart.js</span>
-                                <span>PHP</span>
-                                <span>MySQL</span>
-                            </div>
-                            <div class="project-links">
-                                <a href="#"><i data-lucide="external-link"></i> Demo</a>
-                                <a href="#"><i data-lucide="github"></i> Kode</a>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Project 3 -->
-                    <div class="project-card glass" data-reveal="up">
-                        <div class="project-img">
-                            <img src="./assets/projects/project3.png" alt="Task Manager">
-                        </div>
-                        <div class="project-info">
-                            <h3>Nova Task Manager</h3>
-                            <p>Alat manajemen tugas futuristik dengan elemen UI holografik.</p>
-                            <div class="project-tags">
-                                <span>Vanilla JS</span>
-                                <span>CSS Grid</span>
-                            </div>
-                            <div class="project-links">
-                                <a href="#"><i data-lucide="external-link"></i> Demo</a>
-                                <a href="#"><i data-lucide="github"></i> Kode</a>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Project 4 -->
-                    <div class="project-card glass" data-reveal="up">
-                        <div class="project-img">
-                            <img src="./assets/projects/project4.png" alt="SaaS Landing">
-                        </div>
-                        <div class="project-info">
-                            <h3>Aura SaaS Engine</h3>
-                            <p>Halaman arahan berkinerja tinggi untuk solusi perangkat lunak berbasis AI.</p>
-                            <div class="project-tags">
-                                <span>HTML5</span>
-                                <span>GSAP</span>
-                            </div>
-                            <div class="project-links">
-                                <a href="#"><i data-lucide="external-link"></i> Demo</a>
-                                <a href="#"><i data-lucide="github"></i> Kode</a>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Project 5 (Placeholder) -->
-                    <div class="project-card glass" data-reveal="up">
-                        <div class="project-img">
-                            <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=600"
-                                alt="Social App">
-                        </div>
-                        <div class="project-info">
-                            <h3>Lumina Social</h3>
-                            <p>Jaringan sosial minimalis yang berfokus pada privasi dan estetika.</p>
-                            <div class="project-tags">
-                                <span>Laravel</span>
-                                <span>Vue.js</span>
-                            </div>
-                            <div class="project-links">
-                                <a href="#"><i data-lucide="external-link"></i> Demo</a>
-                                <a href="#"><i data-lucide="github"></i> Kode</a>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Project 6 (Placeholder) -->
-                    <div class="project-card glass" data-reveal="up">
-                        <div class="project-img">
-                            <img src="https://images.unsplash.com/photo-1558655146-d09347e92766?auto=format&fit=crop&q=80&w=600"
-                                alt="Portfolio">
-                        </div>
-                        <div class="project-info">
-                            <h3>Titan Portfolio</h3>
-                            <p>Situs web yang sedang Anda jelajahi, dibangun dengan teknologi futuristik.</p>
-                            <div class="project-tags">
-                                <span>Vanilla Tech</span>
-                                <span>Magic UI</span>
-                            </div>
-                            <div class="project-links">
-                                <a href="#"><i data-lucide="external-link"></i> Demo</a>
-                                <a href="#"><i data-lucide="github"></i> Kode</a>
-                            </div>
-                        </div>
-                    </div>
+                <div class="projects-grid" id="projects-grid">
+                    <!-- Projects will be loaded dynamically via Supabase -->
                 </div>
             </div>
         </section>

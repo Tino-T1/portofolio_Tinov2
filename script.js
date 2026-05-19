@@ -230,11 +230,82 @@ document.addEventListener('DOMContentLoaded', () => {
         window.scrollTo({ top: 0, behavior: 'smooth' });
     });
 
-    // 10. Form Submission via Supabase
+    // 10. Supabase Initialization
     const supabaseUrl = 'https://bzppctjnqyvptwjvywva.supabase.co';
     const supabaseKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImJ6cHBjdGpucXl2cHR3anZ5d3ZhIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzkxNjY4MjgsImV4cCI6MjA5NDc0MjgyOH0.kZl-hlPXvAUYa5kjpEBRsyraNW2KM8SJLbvNB0JS6W4';
     const supabase = window.supabase.createClient(supabaseUrl, supabaseKey);
 
+    // 11. Load Profile (Identity) Data
+    async function loadProfile() {
+        try {
+            const { data, error } = await supabase.from('profile').select('*').eq('id', 1).single();
+            if (error) throw error;
+            if (data) {
+                document.getElementById('hero-name').textContent = data.full_name;
+                document.getElementById('hero-badge').textContent = data.badge_text;
+                document.getElementById('hero-description').textContent = data.description;
+                document.getElementById('about-whoami').textContent = data.about_whoami;
+                document.getElementById('about-education').textContent = data.about_education;
+                document.getElementById('about-mission').textContent = data.about_mission;
+            }
+        } catch (error) {
+            console.error('Error loading profile:', error);
+        }
+    }
+
+    // 12. Load Projects Data
+    async function loadProjects() {
+        try {
+            const { data, error } = await supabase.from('projects').select('*').order('created_at', { ascending: true });
+            if (error) throw error;
+            
+            const projectsGrid = document.getElementById('projects-grid');
+            if (data && data.length > 0) {
+                projectsGrid.innerHTML = ''; // Clear container
+                data.forEach(project => {
+                    // Create tags HTML
+                    let tagsHtml = '';
+                    if (project.tags) {
+                        const tagsArray = project.tags.split(',');
+                        tagsArray.forEach(tag => {
+                            tagsHtml += `<span>${tag.trim()}</span>`;
+                        });
+                    }
+
+                    // Card template
+                    const cardHtml = `
+                        <div class="project-card glass revealed" data-reveal="up">
+                            <div class="project-img">
+                                <img src="${project.image_url}" alt="${project.title}">
+                            </div>
+                            <div class="project-info">
+                                <h3>${project.title}</h3>
+                                <p>${project.description}</p>
+                                <div class="project-tags">
+                                    ${tagsHtml}
+                                </div>
+                                <div class="project-links">
+                                    <a href="${project.demo_url}"><i data-lucide="external-link"></i> Demo</a>
+                                    <a href="${project.github_url}"><i data-lucide="github"></i> Kode</a>
+                                </div>
+                            </div>
+                        </div>
+                    `;
+                    projectsGrid.insertAdjacentHTML('beforeend', cardHtml);
+                });
+                // Re-initialize Lucide icons for dynamically added content
+                lucide.createIcons();
+            }
+        } catch (error) {
+            console.error('Error loading projects:', error);
+        }
+    }
+
+    // Call fetch functions
+    loadProfile();
+    loadProjects();
+
+    // 13. Form Submission via Supabase
     const contactForm = document.querySelector('.contact-form');
     if (contactForm) {
         contactForm.addEventListener('submit', async (e) => {
